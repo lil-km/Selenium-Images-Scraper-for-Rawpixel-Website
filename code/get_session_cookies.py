@@ -3,13 +3,32 @@ from selenium.webdriver.chrome.options import Options
 import pickle
 
 
-PATH = "C:\Program Files (x86)\WebDriver\chromedriver.exe"
+# PATH = "C:\Program Files (x86)\WebDriver\chromedriver.exe"
 
-options = Options()
-options.add_experimental_option("debuggerAddress", "127.0.0.1:9014")
+def parse_args():
+    desc = "Get session cookies for given website"
+    parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('--webdriver', type=str,
+        help='Directory path to Chrome WebDriver application'
+    )
 
-driver = webdriver.Chrome(PATH, options=options)
+    args = parser.parse_args()
+    return args
 
-pickle.dump(driver.get_cookies() , open("cookies.pkl","wb"))
+def webdriver_instantiation(PATH):
+    options = Options()
+    options.add_experimental_option("debuggerAddress", "127.0.0.1:9014")
 
-print(driver.current_url)
+    browser_driver = webdriver.Chrome(PATH, options=options)
+    print(f"The current URL: {browser_driver.current_url}")
+
+    return browser_driver
+
+
+if __name__ '__main__':
+    args = parse_args()
+
+    driver = webdriver_instantiation(args.webdriver)
+
+    pickle.dump(driver.get_cookies() , open("cookies.pkl","wb"))
+

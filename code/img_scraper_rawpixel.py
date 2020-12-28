@@ -16,8 +16,8 @@ import pickle
 def parse_args():
     desc = "Tools to download public domain images from rawpixel website"
     parser = argparse.ArgumentParser(description=desc)
-    parser.add_argument('--browser_path', type=str,
-        help='Directory path to Chrome Web browser application'
+    parser.add_argument('--webdriver', type=str,
+        help='Directory path to Chrome WebDriver application'
     )
 
     parser.add_argument('--output_dir', type=str,
