@@ -25,69 +25,27 @@ To start using this project you need to have account or create one in [rawpixel 
     5. In the opened window (tab) navigate to [rawpixel website](https://www.rawpixel.com/) and login with your account informations.
     <br>**NOTE:** This feature run on >= 63 version of chrome web browser only.
 
-2. Next, you need to run `get_session_cookies.py` Python script. to save your session cookies as `cookies.pkl` file.
+2. Next, you need to run `get_session_cookies.py` Python script. to save your session cookies as `cookies.pkl` file. Here is the command to run:
+
+    ```
+    python get_session_cookies.py \
+        --webdriver="C:\Program Files (x86)\WebDriver\chromedriver.exe"
+    ```
+    It will save session cookies in `cookies.pkl` file.
 
 ## Running the tests
 3. Finally, you need to run `img_scraper_rawpixel.py` Python script, to downlowd images in in your specified directory. Here is the command to run:
 
     ```
     python img_scraper_rawpixel.py \ 
-        --browser_path="C:\Program Files (x86)\WebDriver\chromedriver.exe" \
+        --webdriver="C:\Program Files (x86)\WebDriver\chromedriver.exe" \
         --output_dir="C:\ENP\Projects\GAN\Scripts\Download_img" \
         --url="https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
     ```
 ### Command Arguments:
-* `--browser_path` absolute path to where you saved Chrome WebDriver `chromedriver.exe`.
+* `--webdriver` absolute path to where you saved Chrome WebDriver `chromedriver.exe`.
 * `--output_dir` where to put downloded images.
 * `--url` URL of public domain images collection in [rawpixel website](https://www.rawpixel.com/) (e.g: https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1)
 
 ## Authors
 Khalil Meftah.
-
-## License
-This Project is under MIT-License.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
