@@ -5,11 +5,31 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 from tqdm import tqdm
+import argparse
 import time
 import pickle
 
 # PATH = "C:\Program Files (x86)\WebDriver\chromedriver.exe"
 # r'C:\ENP\Projects\GAN\Scripts\Download_img'
+# "https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
+
+def parse_args():
+    desc = "Tools to download public domain images from rawpixel website"
+    parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('--browser_path', type=str,
+        help='Directory path to Chrome Web browser application'
+    )
+
+    parser.add_argument('--output_dir', type=str,
+        help='Directory path to the folder where to save images'
+    )
+
+    parser.add_argument('--url', type=str,
+        help='URL link to public domain groupe of images in rawpixel website'
+    )
+    
+    args = parser.parse_args()
+    return args
 
 def webdriver_instantiation(PATH, download_path):
     options = Options()
@@ -61,14 +81,13 @@ def scroll_down(browser_driver):
 
 
 if __name__ == '__main__':
-    url =  "https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
-
+    args = parse_args()
     driver = webdriver_instantiation(
-        "C:\Program Files (x86)\WebDriver\chromedriver.exe",
-        r'C:\ENP\Projects\GAN\Scripts\Download_img'
+        args.browser_path,
+        args.output_dir
     )
-    
-    driver.get(url)
+
+    driver.get(args.url)
     
     add_cookies(driver, "cookies.pkl")
     scroll_down(driver)
