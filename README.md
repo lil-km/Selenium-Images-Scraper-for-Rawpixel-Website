@@ -3,48 +3,49 @@ This project scrape images from [rawpixel website](https://www.rawpixel.com/) th
 
 ## Prerequisites
 * Install Chrome [Web Browser](https://www.google.com/chrome/).
-* Install Chrome [WebDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads), just make sure version compatibility with you chrome web browser version.
+* Install Chrome [WebDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads), just ensure version compatibility with you Chrome Web Browser version.
+* Install `Python 3.7`.
 
 ## Requirements
-* Install Requirements `pip install -r requirements.txt`, it's good to install dependencies in Python virtual environment.
 * The `requirements.txt` file contain `Selenium` and `tqdm` libraries.
+* Install Requirements with `pip install -r requirements.txt`, it's good to install dependencies in Python virtual environment.
 
 ## Getting started
-to use this project you need to create an account in [rawpixel website](https://www.rawpixel.com/).
+To start using this project you need to have account or create one in [rawpixel website](https://www.rawpixel.com/).
 
-1. Open chrome web browser in debbuger mode this.
-2. navigate to where your chrome web browser application `chrome.exe` is installed in your filesystem.
-3. to make system entrie for system environment variable `i.e PATH`.
-4. Open command prompt, and enter this command:
+1. Open Chrome Web Browser in debugger mode.
+    1. navigate to where your Chrome Web Browser application (`chrome.exe`) is installed in your filesystem, and copy the path where it's installed.
+    2. Add the path to system environment variable `i.e PATH` "make sure to not include `chrome.exe` in the path".
+    3. Create new directory fro where to launch the browser. it's added to avoid conflict with your already installed Chrome Web Browser.
+    4. Open command prompt, and enter this command:
+        ```
+            chrome.exe -remote-debugging-port=9014 --user-data-dir="C:\Selenium\Chrome_Test_Profile"
+        ```
+        the port number is any four number of your choice. the command will launch Chrome Web Browser window in debugging mode.
+    5. In the opened window (tab) navigate to [rawpixel website](https://www.rawpixel.com/) and login with your account informations.
+    <br>**NOTE:** This feature run on >= 63 version of chrome web browser only.
 
-```
-chrome.exe -remote-debugging-port=9014 --user-data-dir="C:\Selenium\Chrome_Test_Profile
-```
-
-5. the new directory is added to avoid conflict between your already installed chrome web browser and chrome web browser in debbuging mode.
-6. the port number is any four number of your choice.
-7. the command will launch chrome web browser window in debbuging mode.
-8. in the opened window (tab) navigate to [rawpixel website](https://www.rawpixel.com/) and login with your account informations.
-9. Next, you need to run `get_session_cookies.py` python script. to save your session cookies as `cookies.pkl` file.
-10. this feature run on >= 63 version of chrome web browser.
+2. Next, you need to run `get_session_cookies.py` Python script. to save your session cookies as `cookies.pkl` file.
 
 ## Running the tests
-10. Finally, you need to run `img_scraper_rawpixel.py` python script. to downlowd images in `download-directory`.
+3. Finally, you need to run `img_scraper_rawpixel.py` Python script, to downlowd images in in your specified directory. Here is the command to run:
 
-11. command:
-
-```
-python img_scraper_rawpixel.py \ 
-    --browser_path="C:\Program Files (x86)\WebDriver\chromedriver.exe" \
-    --output_dir="C:\ENP\Projects\GAN\Scripts\Download_img" \
-    --url="https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
-
-```
+    ```
+    python img_scraper_rawpixel.py \ 
+        --browser_path="C:\Program Files (x86)\WebDriver\chromedriver.exe" \
+        --output_dir="C:\ENP\Projects\GAN\Scripts\Download_img" \
+        --url="https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
+    ```
+### Command Arguments:
+* `--browser_path` absolute path to where you saved Chrome WebDriver `chromedriver.exe`.
+* `--output_dir` where to put downloded images.
+* `--url` URL of public domain images collection in [rawpixel website](https://www.rawpixel.com/) (e.g: https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1)
 
 ## Authors
-
+Khalil Meftah.
 
 ## License
+
 
 
 
