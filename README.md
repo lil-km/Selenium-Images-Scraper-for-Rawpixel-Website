@@ -45,7 +45,7 @@ To start using this project you need to have account or create one in [rawpixel 
 Khalil Meftah.
 
 ## License
-
+This Project is under MIT-License.
 
 
 
