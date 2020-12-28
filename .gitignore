@@ -1,0 +1,11 @@
+# Untracked folder
+bs-scraper/
+
+
+
+# untracked file
+*.log
+*.html
+*.pkl
+Dockerfile
+
