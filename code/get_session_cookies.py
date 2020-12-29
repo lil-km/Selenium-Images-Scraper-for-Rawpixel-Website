@@ -3,8 +3,6 @@ from selenium.webdriver.chrome.options import Options
 import pickle
 
 
-# PATH = "C:\Program Files (x86)\WebDriver\chromedriver.exe"
-
 def parse_args():
     desc = "Get session cookies for given website"
     parser = argparse.ArgumentParser(description=desc)
@@ -14,6 +12,7 @@ def parse_args():
 
     args = parser.parse_args()
     return args
+
 
 def webdriver_instantiation(PATH):
     options = Options()

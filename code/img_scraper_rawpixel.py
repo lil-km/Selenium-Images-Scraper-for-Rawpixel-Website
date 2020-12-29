@@ -9,9 +9,6 @@ import argparse
 import time
 import pickle
 
-# PATH = "C:\Program Files (x86)\WebDriver\chromedriver.exe"
-# r'C:\ENP\Projects\GAN\Scripts\Download_img'
-# "https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1"
 
 def parse_args():
     desc = "Tools to download public domain images from rawpixel website"
@@ -30,6 +27,7 @@ def parse_args():
     
     args = parser.parse_args()
     return args
+
 
 def webdriver_instantiation(PATH, download_path):
     options = Options()
@@ -55,6 +53,7 @@ def download_image(browser_driver, link):
     button.click()
     time.sleep(3)
 
+
 def add_cookies(browser_driver, cookies_file):
     cookies = pickle.load(open(cookies_file, "rb"))
     for cookie in cookies:
@@ -62,6 +61,7 @@ def add_cookies(browser_driver, cookies_file):
 
     time.sleep(3)
     browser_driver.refresh()
+
 
 def scroll_down(browser_driver):
     jscript = """
