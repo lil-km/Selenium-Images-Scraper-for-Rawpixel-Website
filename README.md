@@ -1,4 +1,4 @@
-# Selenium Images Scraper for Rawpixel Website
+# Selenium Images Scraper 🕷 for Rawpixel Website
 This project scrape images from [rawpixel website](https://www.rawpixel.com/) that are on public domain.
 
 ## Prerequisites
