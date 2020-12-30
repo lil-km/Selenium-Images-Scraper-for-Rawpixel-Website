@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import argparse 
 import pickle
 
 
@@ -24,10 +25,8 @@ def webdriver_instantiation(PATH):
     return browser_driver
 
 
-if __name__ '__main__':
+if __name__ == '__main__':
     args = parse_args()
 
     driver = webdriver_instantiation(args.webdriver)
-
-    pickle.dump(driver.get_cookies() , open("cookies.pkl","wb"))
-
+    pickle.dump(driver.get_cookies() , open("cookies_1.pkl","wb"))

@@ -83,7 +83,7 @@ def scroll_down(browser_driver):
 if __name__ == '__main__':
     args = parse_args()
     driver = webdriver_instantiation(
-        args.browser_path,
+        args.webdriver,
         args.output_dir
     )
 
