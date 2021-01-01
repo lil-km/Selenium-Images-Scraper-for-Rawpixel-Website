@@ -8,7 +8,7 @@ This project scrape images from [rawpixel website](https://www.rawpixel.com/) th
 
 ## Requirements
 * The `requirements.txt` file contain `Selenium` and `tqdm` libraries.
-* Install requirements with `pip install -r requirements.txt`, it's good to install dependencies in Python virtual environment.
+* Install requirements with `pip install -r requirements.txt`, it's good to install dependencies in isolated Python virtual environment.
 
 ## Getting started
 To start using this project you need to have account or create one in [rawpixel website](https://www.rawpixel.com/).
@@ -19,7 +19,7 @@ To start using this project you need to have account or create one in [rawpixel 
     3. Create new directory where to launch the browser. It's added to avoid conflict with your already installed Chrome Web Browser.
     4. Open command prompt `cmd`, and enter this command:
         ```
-            chrome.exe -remote-debugging-port=9014 --user-data-dir="<absolute path to created directory>"
+            chrome.exe -remote-debugging-port=9014 --user-data-dir="<absolute path to the created directory>"
         ```
         The command will launch Chrome Web Browser window in debugging mode.
     5. In the opened window (tab) navigate to [rawpixel website](https://www.rawpixel.com/) and login with your account informations, then go to a public domain images album of your choice.
@@ -28,7 +28,7 @@ To start using this project you need to have account or create one in [rawpixel 
 2. Next, you need to run `get_session_cookies.py` Python script. to save your session cookies. Here is the command to run:
 
     ```
-    python get_session_cookies.py \
+    python code/get_session_cookies.py \
         --webdriver="<absolute path to chrome webdriver>"
     ```
     It will save session cookies in `cookies.pkl` file.
@@ -37,11 +37,12 @@ To start using this project you need to have account or create one in [rawpixel 
 3. Finally, you need to run `img_scraper_rawpixel.py` Python script, to downlowd images in in your specified directory. Here is the command to run:
 
     ```
-    python img_scraper_rawpixel.py \ 
+    python code/img_scraper_rawpixel.py \ 
         --webdriver="<absolute path to chrome webdriver>" \
         --output_dir="<absolute path to output directory>" \
         --url="<url of your choice>"
     ```
+
 ### Command Arguments:
 * `--webdriver` absolute path to where you saved Chrome WebDriver `chromedriver.exe`.
 * `--output_dir` where to put downloded images.
