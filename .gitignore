@@ -7,6 +7,6 @@ bs-scraper/
 *.log
 *.html
 *.pkl
-*.txt
+note.txt
 Dockerfile
 
