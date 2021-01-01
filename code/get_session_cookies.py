@@ -29,4 +29,4 @@ if __name__ == '__main__':
     args = parse_args()
 
     driver = webdriver_instantiation(args.webdriver)
-    pickle.dump(driver.get_cookies() , open("cookies_1.pkl","wb"))
+    pickle.dump(driver.get_cookies() , open("cookies.pkl","wb"))
