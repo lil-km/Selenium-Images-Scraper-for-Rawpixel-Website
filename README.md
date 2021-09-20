@@ -49,4 +49,4 @@ To start using this project you need to have account or create one in [rawpixel 
 * `--url` URL of public domain images collection in [rawpixel website](https://www.rawpixel.com/) (e.g: https://www.rawpixel.com/board/574376/les-roses-pierre-joseph-redoute-free-cc0-roses-illustrations?sort=curated&mode=shop&page=1)
 
 ## Authors
-Khalil Meftah.
+K Tonpa.
